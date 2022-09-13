@@ -1,13 +1,27 @@
-import styled from 'styled-components';
+import GridStyle from '@/styles/Layout/grid.style';
+import { buttonKeys } from '../../constants/ButtonKeys';
+import { Button } from '@/Layout/Button';
 
-export const Grid = styled.div`
-    height: 70vh;
-    text-align: center;
-    background: #363535;
+interface IGridProps {
+    onClick: (e:string) => void
+}
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* grid-template-columns: 2fr 2fr 2fr; */
-    grid-auto-rows: minmax(auto, auto);
-    /* grid-gap: 5px; */
-`
+export const Grid = ({onClick}:IGridProps) => {
+    return (
+        <GridStyle>
+            {
+            buttonKeys.map((button:any, i:any) => {
+                return <Button 
+                    key={i} 
+                    onClick={onClick}
+                    equal={button.equal ?? false}
+                    color={button.color}
+                    hoverColor={button.hoverColor}
+                    value={button.value}
+                />
+            })
+            }
+        </GridStyle>
+    )
+
+}
