@@ -11,7 +11,8 @@ const ScreenStyle = styled.div`
     align-items: center;
     justify-content: right;
     color: white;
-    font-weight: bold;
+    font-weight: Lucida;
+    font-size: 20px;
     box-sizing: border-box;
 `
 
