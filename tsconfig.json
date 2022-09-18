@@ -23,6 +23,7 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"],
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

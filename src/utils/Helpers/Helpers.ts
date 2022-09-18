@@ -1,5 +1,5 @@
-import { actionTypes } from '../constants/enums/enums';
-import { IAction, IState } from '../constants/interfaces/Interfaces';
+import { actionTypes } from '../../constants/enums/enums';
+import { IAction, IState } from '../../constants/interfaces/Interfaces';
 
 export const isNumber = (number:string) => /[0-9]+/.test(number)
 
@@ -19,4 +19,8 @@ export const reducer = (state: IState, action: IAction): IState => {
         default:
             return {...state, display: "0"}
     }
+}
+
+export const testFunction = (a:number, b:number) => {
+    return a + b
 }

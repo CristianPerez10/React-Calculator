@@ -4,7 +4,7 @@ import Grid from './components/Grid';
 import Screen from './components/Screen/Screen';
 import { actionTypes } from './constants/enums/enums';
 import { IState } from './constants/interfaces/Interfaces';
-import { isNumber, reducer } from './utils/Helpers';
+import { isNumber, reducer } from './utils/Helpers/Helpers';
 
 const initialState:IState = {display: "0"}
 
