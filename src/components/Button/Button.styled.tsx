@@ -1,4 +1,4 @@
-import { MainButtonInterface } from '@/constants/interfaces/button.interface';
+import { MainButtonInterface } from '@/constants/interfaces/Interfaces';
 import styled, {css} from 'styled-components';
 
 const ButtonStyle = styled.button<MainButtonInterface>`
@@ -23,5 +23,4 @@ const ButtonStyle = styled.button<MainButtonInterface>`
         }
     `}
 `
-
 export default ButtonStyle;

@@ -11,5 +11,4 @@ const ContainerStyle = styled.div`
     left: 35%;
     top: 5%;
 `
-
 export default ContainerStyle;

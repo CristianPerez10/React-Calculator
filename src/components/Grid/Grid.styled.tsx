@@ -8,5 +8,4 @@ const GridStyle = styled.div`
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 10px;
 `
-
 export default GridStyle

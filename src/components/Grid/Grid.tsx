@@ -1,14 +1,13 @@
-import GridStyle from '@/styles/Layout/grid.style';
+import GridStyle from './Grid.styled';
 import { buttonKeys } from '../../constants/ButtonKeys';
-import { Button } from '@/Layout/Button';
+import Button from '../Button';
 
 interface IGridProps {
     onClick: (e:string) => void
 }
 
-export const Grid = ({onClick}:IGridProps) => {
-    return (
-        <GridStyle>
+const Grid = ({onClick}:IGridProps) => {
+    return <GridStyle>
             {
                 buttonKeys.map((button:any, i:any) => {
                     return <Button 
@@ -22,6 +21,5 @@ export const Grid = ({onClick}:IGridProps) => {
                 })
             }
         </GridStyle>
-    )
-
 }
+export default Grid;

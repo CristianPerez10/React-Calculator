@@ -1,18 +1,25 @@
-import { Container } from '@/Layout/Container';
-import { Grid } from '@/Layout/Grid';
-import { Screen } from '@/Layout/Screen';
-import { useEffect, useState } from 'react';
-import { calculation, CalculationSchema } from './constants/helpers/Helpers';
+import { useReducer } from 'react';
+import Container from './components/Container/Container';
+import Grid from './components/Grid';
+import Screen from './components/Screen/Screen';
+import { actionTypes } from './constants/enums/enums';
+import { IState } from './constants/interfaces/Interfaces';
+import { isNumber, reducer } from './utils/Helpers';
+
+const initialState:IState = {display: "0"}
 
 const App = () => {
-  // const [state, setState] = useState<CalculationSchema>({total:null, next:null, operation:null})
-  const [state, setState] = useState<any>({total:null, next:null, operation:null})
-
-  const handleClick = (value:string) => setState(calculation({state, value}))
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const handleClick = (value:string) => {
+    if(["+", "-", "x", "÷"].includes(value)) dispatch({type: actionTypes.OPERATION, payload:value})
+    if(value === "=") dispatch({type: actionTypes.EQUAL, payload:value})
+    if(value === "AC" || value === "DEL") dispatch({type: actionTypes.CLEAN, payload:value})
+    if(isNumber(value)) dispatch({type: actionTypes.NUMBER, payload:value})
+  }
 
   return (
     <Container>
-      <Screen>{state.total ? state.total : "0"}</Screen>
+      <Screen>{state.display}</Screen>
       <Grid onClick={handleClick}/>
     </Container>
   )
