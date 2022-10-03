@@ -1,7 +1,6 @@
 import { testFunction } from './Helpers';
+import { expect, test } from 'vitest'
 
-describe("First test", () =>{
-    it("Making first test", () => {
-        expect(testFunction(1,2)).toBe(3)
-    })
+test("Function test", () => {
+    expect(testFunction(2, 2)).toBe(4)
 })
